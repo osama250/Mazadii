@@ -7,16 +7,10 @@ use Illuminate\Support\Facades\Schema;
 class CreateRulesTable extends Migration
 {
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('rules', function (Blueprint $table) {
             $table->increments('id');
-
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,19 +23,10 @@ class CreateRulesTable extends Migration
             $table->text('description');
 
             $table->unique(['rule_id', 'locale']);
-
-            $table->foreign('rule_id')
-                ->references('id')
-                ->on('rules')
-                ->onDelete('cascade');
+            $table->foreign('rule_id')->references('id') ->on('rules')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('rule_translations');

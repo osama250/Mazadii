@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 
+
 class sliderController extends AppBaseController
 {
     /** @var  SliderRepository */
@@ -20,19 +21,14 @@ class sliderController extends AppBaseController
         $this->SliderRepository = $sliderRepo;
     }
 
-    /**
-     * Display a listing of the slider.
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
     public function index(Request $request)
     {
-        $sliders = $this->SliderRepository->paginate(10);
+        // return 'Done Arrive';
 
+        $sliders = $this->SliderRepository->paginate(10);
         return view('adminPanel.sliders.index')
-            ->with('sliders', $sliders);
+            ->with('sliders', $sliders );
+            // return view( 'adminPanel.sliders.index' , get_defined_vars() );
     }
 
     /**
@@ -55,7 +51,7 @@ class sliderController extends AppBaseController
     public function store(CreateSliderRequest $request)
     {
         $input = $request->all();
-        
+
         $slider = $this->SliderRepository->create($input);
 
         Flash::success(__('messages.saved', ['model' => __('models/sliders.singular')]));

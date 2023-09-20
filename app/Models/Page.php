@@ -22,8 +22,7 @@ class Page extends Model
         'in_footer' => 'string'
     ];
 
-
-
+        ///////////////////////////////////  Validations \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     public static function rules()
     {
         $languages = array_keys(config('langs'));
@@ -43,7 +42,7 @@ class Page extends Model
         return $this->hasOne('App\Models\Meta', 'page_id', 'id');
     }
 
-    public function paragraph()
+    public function paragraph()   //  One to many
     {
         return $this->hasMany('App\Models\Paragraph', 'page_id', 'id');
     }

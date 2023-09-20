@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>@lang('models/faqs.fields.id')</th>
+                <th>@lang('models/pages.fields.language')</th>
                 <th>@lang('models/faqs.fields.question')</th>
                 <th>@lang('models/faqs.fields.answer')</th>
                 <th>@lang('models/faqs.fields.action')</th>
@@ -14,6 +15,7 @@
             @foreach ( config('langs') as $locale => $name)
             <tr>
                 <td>{{ $faq->id }}</td>
+                <td> {{ $name  }}</td>
                 <td>{{ $faq->translateOrNew($locale)->question }}</td>
                 <td>{!! $faq->translateOrNew($locale)->answer !!}</td>
                 <td>

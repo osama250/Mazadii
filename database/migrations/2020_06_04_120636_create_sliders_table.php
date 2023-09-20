@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\Schema;
 class CreateSlidersTable extends Migration
 {
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('sliders', function (Blueprint $table) {
@@ -19,8 +14,7 @@ class CreateSlidersTable extends Migration
             $table->string('photo');
             $table->string('link')->nullable();
             $table->unsignedTinyInteger('in_order_to')->default(1);
-            $table->string('status')
-                ->comment('Active, Inactive');
+            $table->string('status')->comment('Active, Inactive');
 
             $table->timestamps();
             $table->softDeletes();
@@ -36,16 +30,10 @@ class CreateSlidersTable extends Migration
             $table->longText('content')->nullable();
 
             $table->unique(['slider_id', 'locale']);
-
             $table->foreign('slider_id')->references('id')->on('sliders')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('slider_translations');

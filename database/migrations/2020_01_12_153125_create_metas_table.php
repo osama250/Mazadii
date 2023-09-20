@@ -6,18 +6,11 @@ use Illuminate\Database\Schema\Blueprint;
 class CreateMetasTable extends Migration
 {
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('metas', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('status')
-                ->default(1)
-                ->comment('0 => Inactive, 1 => Active');
+            $table->tinyInteger('status')->default(1)->comment('0 => Inactive, 1 => Active');
 
             $table->string('page');
 
@@ -39,16 +32,10 @@ class CreateMetasTable extends Migration
             $table->longText('keywords');
 
             $table->unique(['meta_id', 'locale']);
-
             $table->foreign('meta_id')->references('id')->on('metas')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('meta_translations');

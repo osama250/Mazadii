@@ -6,35 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ParagraphTranslation extends Model
 {
-  
 
-    /**
-     * Table name.
-     *
-     * @var string
-     */
-    protected $table = 'paragraph_translations';
+    protected $table        = 'paragraph_translations';
+    protected $primaryKey   = 'trans_id';
+    protected $fillable     = ['text'];
+    public $timestamps      = false;
 
-    /**
-     * Primary key.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'trans_id';
-
-    /**
-     * Fillable fields.
-     *
-     * @var array
-     */
-    protected $fillable = ['text'];
-
-    /**
-     * Timestamps.
-     *
-     * @var boolean
-     */
-    public $timestamps = false;
-
-    
 }

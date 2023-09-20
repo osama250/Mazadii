@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>@lang('models/faqCategories.fields.id')</th>
+                <th>@lang('models/pages.fields.language')</th>
                 <th>@lang('models/faqCategories.fields.name')</th>
                 <th>@lang('models/faqCategories.fields.action')</th>
             </tr>
@@ -13,6 +14,7 @@
             @foreach ( config('langs') as $locale => $name)
             <tr>
                 <td>{{ $faqCategory->id }}</td>
+                <td>{{ $name }}</td>
                 <td>{{ $faqCategory->translateOrNew($locale)->name }}</td>
                 <td>
                     {!! Form::open(['route' => ['adminPanel.faqCategories.destroy', $faqCategory->id], 'method' => 'delete']) !!}

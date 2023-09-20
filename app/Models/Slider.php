@@ -7,56 +7,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Astrotomic\Translatable\Translatable;
 use App\Helpers\ImageUploaderTrait;
 
-/**
- * Class slider
- * @package App\Models
- * @version June 4, 2020, 12:06 pm UTC
- *
- * @property string $photo
- * @property string $title
- * @property string $description
- * @property string $link
- * @property integer $status
- * @property integer $sort
- */
 class Slider extends Model
 {
     use SoftDeletes, Translatable, ImageUploaderTrait;
-
-    public $table = 'sliders';
-
-
+    public $table    = 'sliders';
     protected $dates = ['deleted_at'];
-
     public $translatedAttributes =  ['title', 'subtitle', 'content', 'button_text'];
+    public $fillable             = [ 'in_order_to','photo', 'status', 'link' ];
 
-
-    public $fillable = [
-        'in_order_to',
-        'photo',
-        'status',
-        'link',
-    ];
-
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
     protected $casts = [
-        'id' => 'integer',
-        'in_order_to' => 'integer',
-        'photo' => 'string',
-        'content' => 'string',
-        'status' => 'string',
+        'id'            => 'integer',
+        'in_order_to'   => 'integer',
+        'photo'         => 'string',
+        'content'       => 'string',
+        'status'        => 'string',
     ];
 
-
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
     public static function rules()
     {
         $languages = array_keys(config('langs'));

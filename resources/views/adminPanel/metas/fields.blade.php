@@ -35,14 +35,16 @@
                     {!! Form::textarea($locale . '[keywords]', isset($meta)? $meta->translateOrNew($locale)->keywords : '' ,
                     ['class' => 'form-control', 'placeholder' => $name . ' keywords']) !!}
                 </div>
+
+                    {{--  Page Id Field  --}}
+                <div class="form-group col-sm-6">
+                    {!! Form::label('page', __('models/metas.fields.page').':') !!}
+                    {!! Form::text('page', null, ['class' => 'form-control']) !!}
+                </div>
+
             </div>
 
             @endforeach
-            {{--  Page Id Field  --}}
-            <div class="form-group col-sm-6">
-                {!! Form::label('page', __('models/metas.fields.page').':') !!}
-                {!! Form::text('page', null, ['class' => 'form-control']) !!}
-            </div>
 
 
             <!-- Submit Field -->

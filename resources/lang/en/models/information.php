@@ -1,13 +1,15 @@
 <?php
 
 return array (
-  'singular' => 'Information',
-  'plural' => 'Information',
-  'fields' => 
+    'singular' => 'Information',
+    'plural'   => 'Information',
+    'fields'   =>
   array (
-    'id' => 'Id',
-    'name' => 'Name',
-    'value' => 'Value',
-    'status' => 'Status',
+    'id'         => 'Id',
+    'language'   => 'languages',
+    'name'       => 'Name',
+    'value'      => 'Value',
+    'status'     => 'Status',
+    'actions'    => 'Actions'
   ),
 );

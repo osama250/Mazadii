@@ -1,11 +1,12 @@
 <?php
 
 return array (
-  'singular' => 'Roles',
-  'plural' => 'Roles',
-  'fields' => 
+    'singular' => 'Roles',
+    'plural'   => 'Roles',
+    'fields'   =>
   array (
-    'id' => 'Id',
-    'name' => 'Name',
+    'id'        => 'Id',
+    'name'      => 'Name',
+    'actions'   => 'Actions'
   ),
 );

@@ -2,21 +2,20 @@
     <table class="table table-striped" id="pages-table">
         <thead>
             <th>@lang('models/pages.fields.id')</th>
-            <th>@lang('models/pages.fields.language')</th>
+            {{-- <th>@lang('models/pages.fields.language')</th> --}}
             <th>@lang('models/pages.fields.name')</th>
-            <th>@lang('models/paragraphs.plural')</th>
-            <th>@lang('models/images.plural')</th>
-            <th>@lang('crud.action')</th>
+            <th>@lang('models/pages.fields.paragraphs')</th>
+            <th>@lang('models/pages.fields.images')</th>
+            <th>@lang('models/pages.fields.actions')</th>
         </thead>
         <tbody>
             @foreach($pages as $page)
-            @php $i = 1; @endphp
-            @foreach ( config('langs') as $locale => $name)
+            {{-- @php $i = 1; @endphp --}}
+             {{--  @foreach ( config('langs') as $locale => $name) --}}
             <tr>
                 <td>{{ $page->id }}</td>
-                <td>{{ $name }}</td>
-                <td>{{ $page->translateOrNew($locale)->name }}</td>
-
+                {{-- <td>{{ $name }}</td> --}}
+                <td>{{ $page->name }}</td>
                 <td>
                     <a href="{{ route('adminPanel.pages.paragraphs.index', $page->id) }}">
                         {{ $page->paragraph_count }}
@@ -36,7 +35,7 @@
                         </a>
                         @endcan
                         @can('pages edit')
-                        <a href="{{ route('adminPanel.pages.edit', [$page->id]) . "?languages=$locale" }}" class='btn btn-ghost-info'>
+                        <a href="{{ route('adminPanel.pages.edit', [$page->id] ) }}" class='btn btn-ghost-info'>
                             <i class="fa fa-edit"></i>
                         </a>
                         @endcan
@@ -48,8 +47,8 @@
                     {!! Form::close() !!}
                 </td>
             </tr>
-            @php $i = 0; @endphp
-            @endforeach
+           {{-- @php $i = 0; @endphp --}}
+             {{-- @endforeach --}}
             @endforeach
         </tbody>
     </table>

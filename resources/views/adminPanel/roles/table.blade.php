@@ -2,7 +2,7 @@
     <table class="table table-striped" id="roles-table">
         <thead>
             <th>@lang('models/roles.fields.name')</th>
-            <th >@lang('crud.action')</th>
+            <th >@lang('models/roles.fields.actions')</th>
         </thead>
         <tbody>
         @foreach($roles as $roles)

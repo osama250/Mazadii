@@ -2,7 +2,7 @@
 
 @section('content')
 <ol class="breadcrumb">
-    <li class="breadcrumb-item">Faq Categories</li>
+    <li class="breadcrumb-item"> @lang('models/faq-ategories.plural') </li>
 </ol>
 <div class="container-fluid">
     <div class="animated fadeIn">
@@ -12,9 +12,17 @@
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i>
-                        FaqCategories
+                        @lang('models/faq-ategories.plural')
                         @can('faqCategories create')
-                        <a class="pull-right" href="{{ route('adminPanel.faqCategories.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                            @if ( App::getLocale() == 'ar' )
+                                <a class="pull-left" href="{{ route('adminPanel.faqCategories.create') }}">
+                                    <i class="fa fa-plus-square fa-lg"></i>
+                                </a>
+                            @else
+                                <a class="pull-right" href="{{ route('adminPanel.faqCategories.create') }}">
+                                    <i class="fa fa-plus-square fa-lg"></i>
+                                </a>
+                            @endif
                         @endcan
                     </div>
                     <div class="card-body">

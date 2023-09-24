@@ -12,6 +12,7 @@ return array(
         'button_text' => 'Button Text',
         'content' => 'Content',
         'status' => 'Status',
+        'actions'     => 'Actions',
         'in_order_to' => 'In Order To',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',

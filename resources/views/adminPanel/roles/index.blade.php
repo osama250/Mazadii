@@ -16,7 +16,11 @@
                              <i class="fa fa-align-justify"></i>
                              @lang('models/roles.plural')
                              @can('roles create')
+                              @if ( App::getLocale() == 'ar' )
+                                <a class="pull-left" href="{{ route('adminPanel.roles.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                              @else
                                 <a class="pull-right" href="{{ route('adminPanel.roles.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                              @endif
                              @endcan
                          </div>
                          <div class="card-body">

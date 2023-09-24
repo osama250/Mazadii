@@ -5,7 +5,7 @@
                 <th>@lang('models/socialLinks.fields.name')</th>
                 <th>@lang('models/socialLinks.fields.link')</th>
                 <th>@lang('models/socialLinks.fields.status')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/socialLinks.fields.actions')</th>
             </tr>
         </thead>
         <tbody>

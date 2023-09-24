@@ -67,6 +67,7 @@ return [
         'print'        => 'Print',
         'reset'        => 'Reset',
         'reload'       => 'Reload',
-        'view_site' => 'View Site',
+        'view_site'    => 'View Site',
+        'siteOptions'  => 'siteOptions'
     ],
 ];

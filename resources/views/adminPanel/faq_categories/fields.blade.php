@@ -8,6 +8,7 @@
 
     @php $i = 0; @endphp
     @endforeach
+
 </ul>
 <div class="tab-content" id="pills-tabContent">
     @php $i = 1; @endphp

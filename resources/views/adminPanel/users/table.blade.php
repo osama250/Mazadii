@@ -5,7 +5,7 @@
             <th>@lang('models/users.fields.email')</th>
             <th>@lang('models/users.fields.status')</th>
             <th>@lang('models/users.fields.created_at')</th>
-            <th>@lang('crud.action')</th>
+            <th>@lang('models/users.fields.actions')</th>
         </thead>
         <tbody>
             @foreach($users as $user)

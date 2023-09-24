@@ -3,22 +3,22 @@
         <thead>
             <tr>
                 <th>@lang('models/metas.fields.id')</th>
-                <th>@lang('models/metas.fields.language')</th>
+                {{-- <th>@lang('models/metas.fields.language')</th> --}}
                 <th>@lang('models/categories.fields.name')</th>
                 <th>@lang('models/categories.fields.type')</th>
                 <th>@lang('models/categories.fields.photo')</th>
                 <th>@lang('models/categories.fields.status')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/categories.fields.actions')</th>
             </tr>
         </thead>
         <tbody>
             @foreach($categories as $category)
             @php $i = 1;@endphp
-            @foreach ( config('langs') as $locale => $name)
+            {{-- @foreach ( config('langs') as $locale => $name) --}}
             <tr>
                 <td>{{ $category->id}}</td>
-                <td>{{ $name }}</td>
-                <td>{{ $category->translateOrNew($locale)->name }}</td>
+                {{-- <td>{{ $name }}</td> --}}
+                <td>{{ $category->name }}</td>
                 <td>{{$i ? $category->parent_id == null ? 'Parent' : 'Child' : '' }}</td>
 
                 <td>
@@ -36,7 +36,7 @@
                         <a href="{{ route('adminPanel.categories.show', [$category->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
                         @endcan
                         @can('categories edit')
-                        <a href="{{ route('adminPanel.categories.edit', [$category->id]) . "?languages=$locale" }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('adminPanel.categories.edit', [$category->id]) }}"class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
                         @endcan
                         @can('categories destroy')
                         {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn
@@ -46,9 +46,9 @@
                     {!! Form::close() !!}
                 </td>
             </tr>
-
+{{--
             @php $i = 0; @endphp
-            @endforeach
+            @endforeach --}}
             @endforeach
         </tbody>
     </table>

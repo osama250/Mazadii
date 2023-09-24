@@ -1,14 +1,16 @@
 <?php
 
 return array (
-  'singular' => 'Category',
-  'plural' => 'Categories',
-  'fields' => 
-  array (
-    'id' => 'Id',
-    'name' => 'Name',
-    'photo' => 'Photo',
-    'status' => 'Status',
-    'type' => 'Type',
-  ),
+    'singular' => 'التسوق',
+    'plural'   => 'الاقسام',
+    'fields'   =>
+    array (
+        'id'         => 'Id',
+        'language'   => 'اللغة',
+        'name'       => 'الاسم',
+        'photo'      => 'الصور',
+        'status'     => 'الحالة',
+        'type'       => 'النوع',
+        'actions'    => 'الاختيارات' ,
+    ),
 );

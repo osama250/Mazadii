@@ -1,14 +1,14 @@
 <?php
 
 return array (
-  'singular' => 'Partner',
-  'plural' => 'Partners',
-  'fields' => 
-  array (
-    'id' => 'Id',
-    'photo' => 'Photo',
-    'name' => 'Name',
-    'link' => 'Link',
-    'status' => 'Status',
-  ),
+    'singular' => 'Partner',
+    'plural'   => 'الشركاء',
+    'fields' =>
+    array (
+        'id'     => 'الرقم',
+        'photo'  => 'الصور',
+        'name'   => 'الاسم',
+        'link'   => 'اللينك',
+        'status' => 'الحالة',
+    ),
 );

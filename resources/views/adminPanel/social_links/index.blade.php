@@ -14,7 +14,15 @@
                         <i class="fa fa-align-justify"></i>
                         @lang('models/socialLinks.plural')
                         @can('socialLinks create')
-                        <a class="pull-right" href="{{ route('adminPanel.socialLinks.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                            @if ( App::getLocale() == 'ar' )
+                                <a class="pull-left" href="{{ route('adminPanel.socialLinks.create') }}">
+                                    <i class="fa fa-plus-square fa-lg"></i>
+                                </a>
+                            @else
+                                <a class="pull-right" href="{{ route('adminPanel.socialLinks.create') }}">
+                                    <i class="fa fa-plus-square fa-lg"></i>
+                                </a>
+                            @endif
                         @endcan
                     </div>
                     <div class="card-body">

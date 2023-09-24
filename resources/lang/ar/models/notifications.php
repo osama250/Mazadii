@@ -2,14 +2,14 @@
 
 return array (
   'singular' => 'Notification',
-  'plural' => 'Notifications',
-  'fields' => 
+  'plural'   => 'الاشعارات',
+  'fields' =>
   array (
-    'id' => 'Id',
-    'title' => 'Title',
-    'body' => 'Body',
-    'send_to' => 'Send To',
-    'created_at' => 'Created At',
-    'updated_at' => 'Updated At',
+    'id'         => 'الرقم',
+    'title'      => 'العنوان',
+    'body'       => 'المحتوى',
+    'send_to'    => 'مرسل الى',
+    'created_at' => 'وقت الانشاء',
+    'updated_at' => 'وقت التعديل',
   ),
 );

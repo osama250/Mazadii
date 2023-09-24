@@ -29,5 +29,6 @@ return array(
         'password' => 'Password',
         'password_confirmation' => 'Password Confirmation',
         'code' => 'Code',
+        'actions'       => 'Actions' ,
     ),
 );

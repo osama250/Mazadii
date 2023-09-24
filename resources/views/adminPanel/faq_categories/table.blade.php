@@ -2,10 +2,10 @@
     <table class="table table-striped" id="faqCategories-table">
         <thead>
             <tr>
-                <th>@lang('models/faqCategories.fields.id')</th>
-                <th>@lang('models/pages.fields.language')</th>
-                <th>@lang('models/faqCategories.fields.name')</th>
-                <th>@lang('models/faqCategories.fields.action')</th>
+                <th>@lang('models/faq-ategories.fields.id')</th>
+                {{-- <th>@lang('models/pages.fields.language')</th> --}}
+                <th>@lang('models/faq-ategories.fields.name')</th>
+                <th>@lang('models/faq-ategories.fields.action')</th>
             </tr>
         </thead>
         <tbody>
@@ -14,8 +14,8 @@
             @foreach ( config('langs') as $locale => $name)
             <tr>
                 <td>{{ $faqCategory->id }}</td>
-                <td>{{ $name }}</td>
-                <td>{{ $faqCategory->translateOrNew($locale)->name }}</td>
+                {{-- <td>{{ $name }}</td> --}}
+                <td>{{ $faqCategory->name }}</td>
                 <td>
                     {!! Form::open(['route' => ['adminPanel.faqCategories.destroy', $faqCategory->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

@@ -6,7 +6,7 @@
                 <th>@lang('models/contacts.fields.email')</th>
                 <th>@lang('models/contacts.fields.code')</th>
                 <th>@lang('models/contacts.fields.message')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/contacts.fields.actions')</th>
             </tr>
         </thead>
         <tbody>

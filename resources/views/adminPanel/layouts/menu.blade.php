@@ -5,7 +5,7 @@
             <h2 class="mb-0">
                 <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true" aria-controls="collapseUsers">
                     <i class="nav-icon icon-user  mr-2"></i>
-                    <strong>Users</strong>
+                    <strong> @lang('models/users.plural') </strong>
                 </button>
             </h2>
         </div>
@@ -97,7 +97,7 @@
                 <li class="nav-item {{ Request::is('adminPanel/faqCategories*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('adminPanel.faqCategories.index') }}">
                         <i class="nav-icon icon-cursor"></i>
-                        <span>@lang('models/faqCategories.plural')</span>
+                        <span>@lang('models/faq-ategories.plural')</span>
                     </a>
                 </li>
                 @endcan
@@ -106,7 +106,7 @@
                 <li class="nav-item {{ Request::is('adminPanel/faqs*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('adminPanel.faqs.index') }}">
                         <i class="nav-icon icon-cursor"></i>
-                        <span>@lang('models/faqs.plural')</span>
+                        <span>@lang('models/fags.plural')</span>
                     </a>
                 </li>
                 @endcan
@@ -151,7 +151,7 @@
             <h2 class="mb-0">
                 <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
                     <i class="nav-icon icon-basket mr-2"></i>
-                    <strong>Shop</strong>
+                    <strong> @lang('models/categories.singular') </strong>
                 </button>
             </h2>
         </div>
@@ -195,7 +195,7 @@
             <h2 class="mb-0">
                 <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseContact" aria-expanded="true" aria-controls="collapseContact">
                     <i class="nav-icon icon-envelope mr-2"></i>
-                    <strong>Contact</strong>
+                    <strong> @lang('models/contacts.singular') </strong>
                 </button>
             </h2>
         </div>

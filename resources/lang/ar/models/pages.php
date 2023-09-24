@@ -2,18 +2,21 @@
 
 return array (
   'singular' => 'Page',
-  'plural' => 'Pages',
+  'plural'   => 'الصفحات',
   'fields' =>
   array (
     'id' => 'Id',
-    'language' => 'Language',
-    'active' => 'Active',
-    'in_navbar' => 'In Navbar',
-    'in_footer' => 'In Footer',
-    'name' => 'Name',
-    'content' => 'Content',
-    'slug' => 'URL',
-    'created_at' => 'Created At',
-    'updated_at' => 'Updated At',
+    'language'    => 'اللغات',
+    'active'      => 'الحالة',
+    'in_navbar'   => 'In Navbar',
+    'in_footer'   => 'In Footer',
+    'name'        => 'الاسم',
+    'content'     => 'المحتوى',
+    'slug'        => 'اللينك',
+    'images'      => 'الصور' ,
+    'paragraphs'  => 'المحتوى',
+    'actions'     => 'الاختيارات',
+    'created_at'  => 'وقت الانشاء',
+    'updated_at'  => 'وقت التعديل',
   ),
 );

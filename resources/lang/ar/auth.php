@@ -22,7 +22,7 @@ return [
     'confirm_password' => 'Confirm Password',
     'remember_me'      => 'Remember Me',
     'sign_in'          => 'Sign In',
-    'sign_out'         => 'Sign out',
+    'sign_out'         => 'تسجيل خروج',
     'register'         => 'Register',
 
     'login' => [
@@ -67,6 +67,7 @@ return [
         'print'        => 'Print',
         'reset'        => 'Reset',
         'reload'       => 'Reload',
-        'view_site' => 'View Site',
+        'view_site'    => 'رؤية الموقع',
+        'siteOptions'  => 'خيارات الموقع'
     ],
 ];

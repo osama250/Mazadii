@@ -2,22 +2,22 @@
     <table class="table table-striped" id="rules-table">
         <thead>
             <tr>
-                <th>@lang('models/faqCategories.fields.id')</th>
-                <th>@lang('models/metas.fields.language')</th>
+                <th>@lang('models/rules.fields.id')</th>
+                {{-- <th>@lang('models/metas.fields.language')</th> --}}
                 <th>@lang('models/rules.fields.title')</th>
                 <th>@lang('models/rules.fields.description')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/rules.fields.actions')</th>
             </tr>
         </thead>
         <tbody>
             @foreach($rules as $rule)
              @php $i = 1;@endphp
-             @foreach ( config('langs') as $locale => $name)
+             {{-- @foreach ( config('langs') as $locale => $name) --}}
                 <tr>
                     <td>{{ $rule->id }}</td>
-                    <td>{{ $name }}</td>
-                    <td>{{ $rule->translateOrNew($locale)->title }}</td>
-                    <td>{{Str::limit($rule->translateOrNew($locale)->description, 150 ) }}</td>
+                    {{-- <td>{{ $name }}</td> --}}
+                    <td>{{ $rule->title }}</td>
+                    <td>{{Str::limit($rule->description, 150 ) }}</td>
                     <td>
                         {!! Form::open(['route' => ['adminPanel.rules.destroy', $rule->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
@@ -29,7 +29,7 @@
                     </td>
                 </tr>
              @php $i = 0; @endphp
-             @endforeach
+             {{-- @endforeach --}}
             @endforeach
         </tbody>
     </table>

@@ -1,26 +1,28 @@
 <?php
 
-return array(
-  'singular' => 'Product',
-  'plural' => 'Products',
-  'fields' =>
-  array(
-    'id' => 'Id',
-    'name' => 'Title',
-    'description' => 'Description',
-    'price' => 'Price',
-    'category_name' => 'Category',
-    'regular_price' => 'Regular Price',
-    'sale_price' => 'Sale Price',
-    'start_offer' => 'Offer Start Date',
-    'end_offer' => 'Offer End Date',
-
-    'photo' => 'Photo',
-    'video' => 'Video',
-    'is_bundle' => 'Bundle',
-    'is_offer' => 'Offer',
-    'effective' => 'Effective',
-    'created_at' => 'Created at',
-    'updated_at' => 'Updated at',
+return array (
+    'singular' => 'Product',
+    'plural'   => 'المنتجات',
+    'fields' =>
+  array (
+    'id'                => 'الرقم',
+    'name'              => 'العنوان',
+    'description'       => 'الوصف',
+    'price'             => 'السعر',
+    'category_name'     => 'القسم',
+    'regular_price'     => 'السعر العادى',
+    'sale_price'        => 'سعر الخصم',
+    'start_offer'       => 'تاريخ بداية العرض',
+    'end_offer'         => 'تاريخ نهاية العرض',
+    'photo'             => 'الصور',
+    'video'             => 'الفيديوخات',
+    'is_bundle'         => 'Bundle',
+    'is_offer'          => 'Offer',
+    'effective'         => 'متفعل',
+    'start_bid_price'   => 'بداية السعر ',
+    'created_at'        => 'وقت الانشاء',
+    'updated_at'        => 'وقت التعديل',
+    'status'            => 'الحالة',
+    'actions'           => 'الاختيارات'
   ),
 );

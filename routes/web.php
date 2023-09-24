@@ -69,6 +69,7 @@ Route::get('/', function () {
 
 Route::get('logout', 'AuthController@logout')->name('logout');
 
+// Route::group( [] , function() {});
 Route::group(['prefix' => 'adminPanel', 'namespace' => 'AdminPanel', 'as' => 'adminPanel.'], function () {
     Route::get('logout', 'AuthController@logout')->name('logout');
 

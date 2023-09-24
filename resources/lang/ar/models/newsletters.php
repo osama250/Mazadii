@@ -2,12 +2,13 @@
 
 return array (
   'singular' => 'Newsletter',
-  'plural' => 'Newsletters',
-  'fields' => 
+  'plural'   => 'النشرات الإخبارية',
+  'fields' =>
   array (
-    'id' => 'Id',
-    'email' => 'Email',
-    'created_at' => 'Created At',
-    'updated_at' => 'Updated At',
+    'id'         => 'الرقم',
+    'email'      => 'الايميل',
+    'actions'    => 'الاختيارات' ,
+    'created_at' => 'وقت الانشاء',
+    'updated_at' => 'وقت التعديل',
   ),
 );

@@ -2,18 +2,19 @@
 
 return array (
   'singular' => 'Admin',
-  'plural' => 'Admins',
-  'fields' => 
+  'plural'   => 'المديرين',
+  'fields' =>
   array (
-    'id' => 'Id',
-    'name' => 'Name',
-    'email' => 'Email',
-    'password' => 'Password',
-    'password_confirmation' => 'Password Confirmation',
-    'roles' => 'Roles',
-    'status' => 'Status',
+    'id'            => 'Id',
+    'name'          => 'الاسم',
+    'email'         => 'الايميل',
+    'password'      => 'كلمة السر',
+    'password_confirmation' => 'تاكيد كلمة السر ',
+    'roles'         => 'الادوار',
+    'status'        => 'الحالة',
+    'actions'       => 'الاختيارات' ,
     'remember_token' => 'Remember Token',
-    'created_at' => 'Created At',
-    'updated_at' => 'Updated At',
+    'created_at'    => 'وقت الانشاء',
+    'updated_at'    => 'وقت التعديل',
   ),
 );

@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <th>@lang('models/pages.fields.id')</th>
-                <th>@lang('models/metas.fields.language')</th>
+                {{-- <th>@lang('models/metas.fields.language')</th> --}}
                 <th>@lang('models/sliders.fields.title')</th>
                 <th>@lang('models/sliders.fields.photo')</th>
                 <th>@lang('models/sliders.fields.link')</th>
@@ -11,17 +11,17 @@
                 {{-- <th>@lang('models/sliders.fields.description')</th> --}}
                   {{--
                         <th>@lang('models/sliders.fields.sort')</th>  --}}
-                        <th colspan="3">@lang('crud.action')</th>
+                <th colspan="3">@lang('models/sliders.fields.actions')</th>
             </tr>
         </thead>
         <tbody>
          @foreach($sliders as $slider)
-                @php $i = 1; @endphp
-                @foreach ( config('langs') as $locale => $name)
+                  @php $i = 1; @endphp
+                {{-- @foreach ( config('langs') as $locale => $name) --}}
                     <tr>
                         <td>{{ $slider->id }}</td>
-                        <td>{{ $name }}</td>
-                        <td>{{ $slider->translateOrNew($locale)->title }}</td>
+                        {{-- <td>{{ $name }}</td> --}}
+                        <td>{{ $slider->title }}</td>
                         <td>
                             @if ($i)
                             <img src="{{asset('uploads/images/thumbnail/' . $slider->photo)}}" alt="{{$slider->name}}" style="width:40px">
@@ -53,8 +53,8 @@
                         </td>
                     </tr>
 
-                @php $i = 0; @endphp
-                @endforeach
+                {{-- @php $i = 0; @endphp
+                @endforeach --}}
          @endforeach
         </tbody>
     </table>

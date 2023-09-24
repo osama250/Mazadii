@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
-
+    @if ( App::getLocale() == 'ar' )
+             <html dir="rtl" >
+    @else
+             <html dir="ltr" >
+    @endif
 <head>
 
     <meta charset="UTF-8">
@@ -32,7 +35,8 @@
     {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"> --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="{{asset('css/'.$settings->where('key', 'theme')->first()->value.'.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+    {{-- <link rel="stylesheet" href="{{asset('css/style.css')}}">  --}}
 
     <link rel="shortcut icon" href="{{ asset('uploads/images/original/'.$settings->where('key', 'favicon')->first()->value) }}">
     <style>
@@ -40,9 +44,25 @@
             width: 100px;
         }
     </style>
+        @if ( App::getLocale() == 'ar')
+            <link rel="stylesheet" href="{{ asset('css/style-right.css')}}" type="text/css">
+        {{-- @php
+            dd( App::getLocale() );
+        @endphp --}}
+        {{-- <style>
+            body {
+                direction: rtl;
+            }
+        </style> --}}
+    @else
+            <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css">
+        {{-- @php
+            dd( App::getLocale() );
+        @endphp --}}
+    @endif
 </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show" >
     <header class="app-header navbar">
         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
             <span class="navbar-toggler-icon"></span>
@@ -88,7 +108,7 @@
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-user"></i> @lang('auth.app.profile')</a>
                 <a class="dropdown-item" href="#">
-                    <i class="fa fa-wrench"></i> @lang('auth.app.settings')</a>  --}}
+                    <i class="fa fa-wrench"></i> @lang('auth.app.settings')</a>
                     {{-- <div class="dropdown-divider"></div> --}}
                     {{-- <a class="dropdown-item" href="{{route('adminPanel.customSettings.show')}}" target="/">
                     <i class="fa fa-cog"></i> @lang('models/customSettings.plural')
@@ -98,9 +118,23 @@
                     </a>
                     @can('siteOptions view')
                     <a class="dropdown-item" href="{{ route('adminPanel.siteOptions.edit', 1) }}">
-                        <i class="fa fa-wrench"></i> @lang('models/siteOptions.plural')
+                        <i class="fa fa-wrench"></i> @lang('auth.app.siteOptions')
                     </a>
                     @endcan
+                    {{-- <div class="menu-sub menu-sub-dropdown w-175px py-4"> --}}
+                        <!--begin::Menu item-->
+                        @foreach ( LaravelLocalization::getSupportedLocales() as $localeCode => $properties )
+                            {{-- <div class="menu-item px-3"> --}}
+                                <a rel="alternate" hreflang="{{ $localeCode }}" class="dropdown-item"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                                    class="menu-link d-flex px-5 active">
+                                    {{ $properties['native'] }}
+                                </a>
+                            {{-- </div> --}}
+                        @endforeach
+
+                        <!--end::Menu item-->
+                    {{-- </div> --}}
                     <a class="dropdown-item" href="{{ route('adminPanel.logout') }}" class="btn btn-default btn-flat">
                         <i class="fa fa-lock"></i>@lang('auth.sign_out')
                     </a>

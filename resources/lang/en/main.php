@@ -1,9 +1,8 @@
 <?php
 
-return array(
-  'profile' => 'Profile',
-  'settings' => 'Settings',
-
-
+return array (
+    'profile' => 'Profile',
+    'settings' => 'Settings',
+    'shop'     => 'Shops' ,
 
 );

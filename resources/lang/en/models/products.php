@@ -29,8 +29,8 @@ return array(
         'effective' => 'Effective',
         'created_at' => 'Created at',
         'updated_at' => 'Updated at',
-
-        'status' => 'Status',
+        'status'            => 'Status',
+        'actions'           => 'Actions'
 
 
     ),

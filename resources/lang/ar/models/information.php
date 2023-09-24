@@ -2,12 +2,14 @@
 
 return array (
   'singular' => 'Information',
-  'plural' => 'Information',
-  'fields' => 
+  'plural'   => 'المعلومات',
+  'fields' =>
   array (
-    'id' => 'Id',
-    'name' => 'Name',
-    'value' => 'Value',
-    'status' => 'Status',
+    'id'         => 'الرقم',
+    'language'   => 'اللغة',
+    'name'       => 'الاسم',
+    'value'      => 'رقم الهاتف',
+    'status'     => 'الحالة',
+    'actions'    => 'الاختيارات'
   ),
 );

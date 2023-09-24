@@ -3,7 +3,7 @@
 return array (
   'singular' => 'Admin',
   'plural' => 'Admins',
-  'fields' => 
+  'fields' =>
   array (
     'id' => 'Id',
     'name' => 'Name',
@@ -12,6 +12,7 @@ return array (
     'password_confirmation' => 'Password Confirmation',
     'roles' => 'Roles',
     'status' => 'Status',
+    'actions' => 'Actions' ,
     'remember_token' => 'Remember Token',
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',

@@ -3,7 +3,7 @@
         <thead>
             <th>@lang('models/admins.fields.name')</th>
             <th>@lang('models/admins.fields.email')</th>
-            <th>@lang('crud.action')</th>
+            <th>@lang('models/admins.fields.actions')</th>
         </thead>
         <tbody>
 

@@ -2,9 +2,11 @@
     @php $i = 1; @endphp
     @foreach ( config('langs') as $locale => $name)
 
-    <li class="nav-item">
-        <a class="nav-link {{$i?'active':''}}" id="{{$name}}-tab" data-toggle="pill" href="#{{$name}}" role="tab" aria-controls="{{$name}}" aria-selected="{{ $i ? 'true' : 'false'}}">{{$name}}</a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link {{$i?'active':''}}" id="{{$name}}-tab"
+                data-toggle="pill" href="#{{$name}}" role="tab" aria-controls="{{$name}}"
+                aria-selected="{{ $i ? 'true' : 'false'}}">{{$name}}</a>
+        </li>
 
     @php $i = 0; @endphp
     @endforeach

@@ -2,11 +2,11 @@
     <table class="table table-striped" id="reviews-table">
         <thead>
             <tr>
-                <th>#</th>
+                <th>@lang('models/reviews.fields.id')</th>
                 <th>@lang('models/reviews.fields.user')</th>
                 <th>@lang('models/reviews.fields.product')</th>
                 <th>@lang('models/reviews.fields.comment')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/reviews.fields.actions')</th>
             </tr>
         </thead>
         <tbody>

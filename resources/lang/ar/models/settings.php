@@ -1,12 +1,12 @@
 <?php
 
 return array (
-  'singular' => 'Setting',
-  'plural' => 'Settings',
-  'fields' =>
+    'singular' => 'Setting',
+    'plural' => 'الاعدادات',
+    'fields' =>
   array (
-    'id' => 'Id',
-    'key' => 'Key',
+    'id'    => 'الرقم',
+    'key'   => 'Key',
     'value' => 'Value',
   ),
 );

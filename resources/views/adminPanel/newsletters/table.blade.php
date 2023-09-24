@@ -3,7 +3,7 @@
         <thead>
             <tr>
                 <th>@lang('models/newsletters.fields.email')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/newsletters.fields.actions')</th>
             </tr>
         </thead>
         <tbody>

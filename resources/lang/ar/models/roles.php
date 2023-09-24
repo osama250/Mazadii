@@ -1,11 +1,12 @@
 <?php
 
 return array (
-  'singular' => 'Roles',
-  'plural' => 'Roles',
-  'fields' => 
+    'singular' => 'Roles',
+    'plural'   => 'الادوار',
+    'fields'   =>
   array (
-    'id' => 'Id',
-    'name' => 'Name',
+    'id'        => 'الرقم',
+    'name'      => 'الاسم',
+    'actions'   => 'الاختيارات'
   ),
 );

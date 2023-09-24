@@ -16,7 +16,16 @@
                         <i class="fa fa-align-justify"></i>
                         @lang('models/information.plural')
                         @can('information create')
-                        <a class="pull-right" href="{{ route('adminPanel.information.create') . "?languages=en" }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                        @if ( App::getLocale() == 'ar' )
+                            <a class="pull-left" href="{{ route('adminPanel.information.create') . "?languages=en" }}">
+                                <i class="fa fa-plus-square fa-lg"></i>
+                            </a>
+                        @else
+                            <a class="pull-right" href="{{ route('adminPanel.information.create') . "?languages=en" }}">
+                                <i class="fa fa-plus-square fa-lg"></i>
+                            </a>
+                        @endif
+
                         @endcan
                     </div>
                     <div class="card-body">

@@ -8,7 +8,7 @@
                 <th>@lang('models/products.fields.description')</th>
                 <th>@lang('models/products.fields.start_bid_price')</th>
                 <th>@lang('models/products.fields.status')</th>
-                <th>@lang('crud.action')</th>
+                <th>@lang('models/products.fields.actions')</th>
             </tr>
         </thead>
         <tbody>

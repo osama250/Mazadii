@@ -17,6 +17,9 @@
 
 /* General */
 
+body {
+    direction: rtl;
+}
 body *:not(i) {
     font-family: 'Dosis', sans-serif;
 }
@@ -140,7 +143,7 @@ button.ps-btn:hover {
 /* Show fields */
 
 .form-group.show {
-    float: left;
+    float: right;
 }
 
 .form-group.show {
@@ -148,13 +151,13 @@ button.ps-btn:hover {
     min-width: 48%;
     background: #efefef;
     padding: 10px;
-    margin-right: 1rem;
+    margin-left: 1rem;
     border: 2px solid #e4e4e4;
     border-radius: 5px;
 }
 
 .form-group.show label {
-    margin-right: 1rem;
+    margin-left: 1rem;
     margin-bottom: 0;
     font-weight: 700;
 }
@@ -211,8 +214,8 @@ header .mobile-btns {
 
 header .mobile-btns img {
     width: 120px;
-    float: left;
-    margin-right: 10px;
+    float: right;
+    margin-left: 10px;
 }
 
 header .mobile-btns a {
@@ -221,7 +224,7 @@ header .mobile-btns a {
 
 header .user-img {
     margin: 0;
-    float: left;
+    float: right;
     width: auto;
     margin-right: 10px;
     background: #fff;
@@ -264,7 +267,7 @@ header .register-btn:hover {
 
 header .login-btn {
     color: var(--primary-bg) !important;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .topbar {
@@ -291,7 +294,7 @@ header .login-btn {
 }
 
 .dc-rightarea {
-    float: right;
+    float: left;
     display: flex;
 }
 
@@ -355,7 +358,7 @@ header .login-btn {
 
 .section.home-blog {
     background-color: #12A152 !important;
-    padding-right: 5%;
+    padding-left: 5%;
 }
 
 .section.home-blog .home-blog-intro,
@@ -378,7 +381,7 @@ header .login-btn {
 }
 
 .section.home-blog .home-blog-list li i {
-    float: right;
+    float: left;
 }
 
 
@@ -428,7 +431,7 @@ header .login-btn {
 }
 
 .dc-ftitle {
-    float: left;
+    float: right;
     width: 100%;
     margin: 0 0 20px;
 }
@@ -436,7 +439,7 @@ header .login-btn {
 .footer-social a {
     border: 1px solid #F2F2F2;
     padding: 5px 8px;
-    margin-right: 5px;
+    margin-left: 5px;
     border-radius: 50%;
     background-color: #F2F2F2;
 }
@@ -449,7 +452,7 @@ header .login-btn {
 }
 
 .img-copyright {
-    float: right;
+    float: left;
     padding: 24px 0;
 }
 
@@ -464,8 +467,7 @@ header .login-btn {
 
 /* End Footer */
 .pull-right {
-    float: right;
+    float: left;
 }
-
 
 /* End Custom Styling */

@@ -2,13 +2,13 @@
 
 return array(
     'singular' => 'Review',
-    'plural' => 'Reviews',
-    'fields' =>
+    'plural'   => 'Reviews',
+    'fields'   =>
     array(
-        'id' => 'Id',
+        'id'      => 'Id',
         'product' => 'Product',
-        'user' => 'User',
+        'user'    => 'User',
         'comment' => 'Comment',
-        'action' => 'Action',
+        'actions'  => 'Action',
     ),
 );

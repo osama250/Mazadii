@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -43,19 +44,10 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
         $this->mapWebRoutes();
-
         //
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
     protected function mapWebRoutes()
     {
         Route::prefix(app()->getLocale())
@@ -64,19 +56,28 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/web.php'));
     }
 
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
     protected function mapApiRoutes()
     {
-             Route::prefix(app()->getLocale() .'/api')
+            Route::prefix( app()->getLocale() .'/api')
+            // Route::prefix( app()->getLocale() /'/api')
             ->middleware('api')
             ->as('api.')
             ->namespace($this->namespace."\\API")
             ->group(base_path('routes/api.php'));
+
+            // $this->routes( function () {
+                // $langs  = array_keys( config('langs') );
+                // $locale = request()->segment(1);
+                // App::setLocale( in_array( $locale , $langs ) ? $locale : 'en' );
+
+                // Route::prefix(  app()->getLocale().'/api')
+                // Route::prefix( '{local}/api' )
+                //     ->middleware('api')
+                //     ->as('api.')
+                    // ->namespace( $this->app->getNamespace() .' "\\API" ' )
+                    // ->namespace($this->namespace."\\API")
+                    // ->group( base_path('routes/api.php') );
+            // });
+
     }
 }

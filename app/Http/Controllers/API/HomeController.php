@@ -38,6 +38,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -160,9 +161,9 @@ class HomeController extends Controller
 
     public function home()
     {
-        $sliders = Slider::active()->orderBy('in_order_to')->get();
+        $sliders    = Slider::active()->orderBy('in_order_to')->get();
         $categories = Category::orderByTranslation('name')->get();
-        $products = Product::where('end_at', '>', now())->limit(9)->orderBy('name')->get();
+        $products   = Product::where('end_at', '>', now())->limit(9)->orderBy('name')->get();
 
         return response()->json(compact('sliders', 'categories', 'products'));
     }
@@ -200,24 +201,53 @@ class HomeController extends Controller
 
     public function sendContactMessage(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|min:3|max:191',
-            'email' => 'required|email|min:3|max:191',
-            'phone' => 'required',
-            'code' => 'nullable',
-            'message' => 'required|string|min:3',
+        // $validated = $request->validate([
+        //     'name'      => 'required|string|min:3|max:191',
+        //     'email'     => 'required|email|min:3|max:191',
+        //     'phone'     => 'required',
+        //     'code'      => 'nullable',
+        //     'message'   => 'required|string|min:3',
+        // ]);
+
+
+        $validator = Validator::make( $request->all() , [
+            'name'      => 'required|string|min:3|max:191',
+            'email'     => 'required|email|min:3|max:191',
+            'phone'     => 'required',
+            'code'      => 'nullable',
+            'message'   => 'required|string|min:3',
         ]);
-        Contact::create($validated);
+
+        if ( $validator->fails() ) {
+            return response()->json( [
+                'error' => $validator->errors()
+            ]);
+        }
+
+        $input = $request->all();
+
+        Contact::create($input);
 
         return response()->json(['msg' => 'success']);
     }
 
     public function newsletter(Request $request)
     {
-        $validated = $request->validate([
+        // $validated = $request->validate([
+        //     'email' => 'required|email|min:3|max:191|unique:newsletters,email',
+        // ]);
+
+        $validator = Validator::make( $request->all() , [
             'email' => 'required|email|min:3|max:191|unique:newsletters,email',
         ]);
-        Newsletter::create($validated);
+
+        if ( $validator->fails() ) {
+            return response()->json( [
+                'error' => $validator->errors()
+            ]);
+        }
+        $input = $request->all();
+        Newsletter::create($input);
 
         return response()->json(['msg' => 'success']);
     }

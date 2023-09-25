@@ -22,18 +22,20 @@ Route::post('login', 'HomeController@login');
 Route::get('register-rules', 'HomeController@registerRules');
 Route::get('approved-users-count', 'HomeController@approvedUsersCount');
 
+//
 Route::get('home', 'HomeController@home');
 Route::get('reviews', 'HomeController@reviews');
 
-
+//
 Route::post('send-contact', 'HomeController@sendContactMessage');
 Route::post('newsletter', 'HomeController@newsletter');
 
-
+//
 Route::get('categories', 'HomeController@categories');
 Route::get('products', 'HomeController@products');
 Route::get('products/{id}', 'HomeController@product');
 
+//
 Route::get('faqs', 'HomeController@faqs');
 Route::get('rules', 'HomeController@rules');
 Route::get('informations', 'HomeController@informations');

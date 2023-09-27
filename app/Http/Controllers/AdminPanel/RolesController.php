@@ -22,15 +22,10 @@ class RolesController extends AppBaseController
     public function __construct(RolesRepository $rolesRepo)
     {
         $this->rolesRepository = $rolesRepo;
+        // $this->middleware('permission:View Blog|Add Blog|roles edit|Delete Blog', ['only' => ['index', 'store']]);
+        // $this->middleware('permission:roles edit', ['only' => ['edit', 'update']]);
     }
 
-    /**
-     * Display a listing of the Roles.
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
     public function index(Request $request)
     {
         $roles = $this->rolesRepository->paginate(10);
@@ -104,8 +99,9 @@ class RolesController extends AppBaseController
     public function edit($id)
     {
         // $roles = $this->rolesRepository->find($id);
-        $roles = Role::findOrFail($id);
+        $roles       = Role::findOrFail($id);
         $permissions = Permission::orderBy('page')->get();
+
         if (empty($roles)) {
             Flash::error(__('messages.cannot', ['model' => __('models/roles.singular')]));
 

@@ -17,21 +17,21 @@
         <!-- Name Field -->
         <div class="form-group col-sm-6">
             {!! Form::label('title', __('models/sliders.fields.title').':') !!}
-            {!! Form::text($locale . '[title]', isset($slider)? $slider->translate($locale)->title : '' , ['class' =>
+            {!! Form::text($locale . '[title]', isset($slider)? $slider->translateOrNew($locale)->title : '' , ['class' =>
             'form-control', 'placeholder' => $name . ' title']) !!}
         </div>
 
         <!-- Name Field -->
         <div class="form-group col-sm-6">
             {!! Form::label('subtitle', __('models/sliders.fields.subtitle').':') !!}
-            {!! Form::text($locale . '[subtitle]', isset($slider)? $slider->translate($locale)->subtitle : '' , ['class' =>
+            {!! Form::text($locale . '[subtitle]', isset($slider)? $slider->translateOrNew($locale)->subtitle : '' , ['class' =>
             'form-control', 'placeholder' => $name . ' subtitle']) !!}
         </div>
 
         <!-- Button text Field -->
         <div class="form-group col-sm-6">
             {!! Form::label('name', __('models/sliders.fields.button_text').':') !!}
-            {!! Form::text($locale . '[button_text]', isset($slider)? $slider->translate($locale)->button_text : '' ,
+            {!! Form::text($locale . '[button_text]', isset($slider)? $slider->translateOrNew($locale)->button_text : '' ,
             ['class'
             => 'form-control', 'placeholder' => $name . ' Button Text']) !!}
         </div>
@@ -96,7 +96,7 @@
     <!-- Submit Field -->
     <div class="form-group col-sm-12">
         {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
-        <a href="{{ route('adminPanel.categories.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
+        <a href="{{ route('adminPanel.sliders.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
     </div>
 
 </div>

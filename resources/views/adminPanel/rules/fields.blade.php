@@ -19,13 +19,13 @@
         <!-- title Field -->
         <div class="form-group col-sm-6">
             {!! Form::label('title', __('models/rules.fields.title').':') !!}
-            {!! Form::text($locale . '[title]', isset($rule)? $rule->translate($locale)->title : '' , ['class' =>
+            {!! Form::text($locale . '[title]', isset($rule)? $rule->translateOrNew($locale)->title : '' , ['class' =>
             'form-control', 'placeholder' => $name . ' title']) !!}
         </div>
         <!-- description Field -->
         <div class="form-group col-sm-12">
             {!! Form::label('description', __('models/rules.fields.description').':') !!}
-            {!! Form::textarea($locale . '[description]', isset($rule)? $rule->translate($locale)->description : '' , ['class' =>
+            {!! Form::textarea($locale . '[description]', isset($rule)? $rule->translateOrNew($locale)->description : '' , ['class' =>
             'form-control', 'placeholder' => $name . ' description']) !!}
         </div>
 

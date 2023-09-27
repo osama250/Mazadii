@@ -29,7 +29,7 @@
                         @include('adminPanel.sliders.table')
                         <div class="pull-right mr-3">
 
-                            {{-- @include('coreui-templates::common.paginate', ['records' => $sliders]) --}}
+                            @include('coreui-templates::common.paginate', ['records' => $sliders] )
 
                         </div>
                     </div>

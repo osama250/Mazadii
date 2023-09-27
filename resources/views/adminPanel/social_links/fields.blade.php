@@ -5,7 +5,7 @@
         {!! Form::label('name', $socialLink->name .':') !!}
         {!! Form::text('link', null, ['class' => 'form-control']) !!}
     </div>
-    
+
 @else
 
     {{-- <div class="form-group col-sm-6">
@@ -19,13 +19,13 @@
         <button name="icon" class="btn btn-secondary ml-2 px-4" data-icon="fab fa-jsfiddle" role="iconpicker"></button>
     </div>
 
-    
+
     <div class="form-group col-sm-6">
         {!! Form::label('name', __('models/socialLinks.fields.name').':') !!}
         {!! Form::text('name', null, ['class' => 'form-control']) !!}
     </div>
 
-   
+
     <!-- Link Field -->
     <div class="form-group col-sm-6">
         {!! Form::label('link', __('models/socialLinks.fields.link').':') !!}

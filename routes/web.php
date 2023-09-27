@@ -16,7 +16,7 @@
 //     return view('welcome');
 // });
 
-
+use App\Http\Controllers\AdminPanel\sliderController;
 
 Auth::routes(['verify' => true]);
 
@@ -112,6 +112,12 @@ Route::group(['prefix' => 'adminPanel', 'namespace' => 'AdminPanel', 'as' => 'ad
 
         // Slider CURD
         Route::resource('sliders', 'sliderController');
+
+        // Route::resource('sliders' , 'TestController');
+        // Route::resource('sliders', function () {
+        //     return 'Done';
+        // });
+
 
         // Contact Us CURD
         Route::resource('contacts', 'ContactController');

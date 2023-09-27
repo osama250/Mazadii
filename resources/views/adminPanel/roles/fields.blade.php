@@ -11,15 +11,15 @@
 
     <table class="table table-striped" id="admins-table">
         <thead>
-        <th>@lang('models/admins.fields.name')</th>
+        <th> @lang('models/admins.fields.name') </th>
         <th></th>
         <th>Control</th>
         <th></th>
         <th></th>
-            
+
         </thead>
         <tbody>
-            
+
             @php $page = null @endphp
 
             @forelse ($permissions as $permission)
@@ -30,10 +30,10 @@
                     </td>
                 @endif
                 <td>
-                    @php 
+                    @php
                         $checked = old('permissions['. $permission->name .']', isset($roles) ? $roles->hasPermissionTo($permission->name): false );
                     @endphp
-        
+
                     <label>
                         <input type="checkbox" name="{{ 'permissions['. $permission->name .']' }}" value="{{ $permission->name }}" {{ $checked ? 'checked' : '' }}>
                         {{ $permission->action }}
@@ -46,9 +46,9 @@
                 @endforelse
         </tbody>
     </table>
-    
-    
-        
+
+
+
 </div>
 
 <!-- Submit Field -->

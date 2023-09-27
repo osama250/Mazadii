@@ -86,12 +86,14 @@
 
                 @can('sliders view')
                 <li class="nav-item {{ Request::is('adminPanel/sliders*') ? 'active' : '' }}">
+                    {{-- <a class="nav-link" href="{{ route('adminPanel.sliders.index') }}"> --}}
                     <a class="nav-link" href="{{ route('adminPanel.sliders.index') }}">
                         <i class="nav-icon icon-cursor"></i>
                         <span>@lang('models/sliders.plural')</span>
                     </a>
                 </li>
                 @endcan
+
 
                 @can('faqCategories view')
                 <li class="nav-item {{ Request::is('adminPanel/faqCategories*') ? 'active' : '' }}">

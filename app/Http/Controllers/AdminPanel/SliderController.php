@@ -31,23 +31,12 @@ class sliderController extends AppBaseController
             // return view( 'adminPanel.sliders.index' , get_defined_vars() );
     }
 
-    /**
-     * Show the form for creating a new slider.
-     *
-     * @return Response
-     */
+
     public function create()
     {
         return view('adminPanel.sliders.create');
     }
 
-    /**
-     * Store a newly created slider in storage.
-     *
-     * @param CreateSliderRequest $request
-     *
-     * @return Response
-     */
     public function store(CreateSliderRequest $request)
     {
         $input = $request->all();
@@ -59,13 +48,6 @@ class sliderController extends AppBaseController
         return redirect(route('adminPanel.sliders.index'));
     }
 
-    /**
-     * Display the specified slider.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
     public function show($id)
     {
         $slider = $this->SliderRepository->find($id);
@@ -79,13 +61,6 @@ class sliderController extends AppBaseController
         return view('adminPanel.sliders.show')->with('slider', $slider);
     }
 
-    /**
-     * Show the form for editing the specified slider.
-     *
-     * @param int $id
-     *
-     * @return Response
-     */
     public function edit($id)
     {
         $slider = $this->SliderRepository->find($id);
@@ -99,14 +74,6 @@ class sliderController extends AppBaseController
         return view('adminPanel.sliders.edit')->with('slider', $slider);
     }
 
-    /**
-     * Update the specified slider in storage.
-     *
-     * @param int $id
-     * @param UpdateSliderRequest $request
-     *
-     * @return Response
-     */
     public function update($id, UpdateSliderRequest $request)
     {
         $slider = $this->SliderRepository->find($id);
@@ -124,15 +91,6 @@ class sliderController extends AppBaseController
         return redirect(route('adminPanel.sliders.index'));
     }
 
-    /**
-     * Remove the specified slider from storage.
-     *
-     * @param int $id
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
     public function destroy($id)
     {
         $slider = $this->SliderRepository->find($id);
@@ -149,4 +107,5 @@ class sliderController extends AppBaseController
 
         return redirect(route('adminPanel.sliders.index'));
     }
+
 }

@@ -1,9 +1,12 @@
 <ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
     @php $i = 1; @endphp
-    @foreach ( config('langs') as $locale => $name)
+    @foreach ( config('langs') as $locale => $name )
 
     <li class="nav-item">
-        <a class="nav-link {{$i?'active':''}}" id="{{$name}}-tab" data-toggle="pill" href="#{{$name}}" role="tab" aria-controls="{{$name}}" aria-selected="{{ $i ? 'true' : 'false'}}">{{$name}}</a>
+        <a class="nav-link {{$i?'active':''}}" id="{{$name}}-tab" data-toggle="pill"
+                href="#{{$name}}" role="tab" aria-controls="{{$name}}" aria-selected="{{ $i ? 'true' : 'false'}}">
+        {{$name}}
+    </a>
     </li>
 
     @php $i = 0; @endphp

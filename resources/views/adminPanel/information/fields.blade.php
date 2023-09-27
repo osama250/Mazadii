@@ -23,13 +23,13 @@
         <!-- Name Field -->
         <div class="form-group col-sm-6">
             {!! Form::label('name', __('models/information.fields.name').':') !!}
-            {!! Form::text($locale . '[name]', isset($information)? $information->translate($locale)->name : '' , ['class' => 'form-control', 'placeholder' => $name . ' name']) !!}
+            {!! Form::text($locale . '[name]', isset($information)? $information->translateOrNew($locale)->name : '' , ['class' => 'form-control', 'placeholder' => $name . ' name']) !!}
         </div>
 
         <!-- Description Field -->
         <div class="form-group col-sm-6">
             {!! Form::label('value', __('models/information.fields.value').':') !!}
-            {!! Form::text($locale . '[value]', isset($information)? $information->translate($locale)->value : '' , ['class' => 'form-control', 'placeholder' => $name . ' value']) !!}
+            {!! Form::text($locale . '[value]', isset($information)? $information->translateOrNew($locale)->value : '' , ['class' => 'form-control', 'placeholder' => $name . ' value']) !!}
         </div>
 
     </div>
@@ -53,7 +53,7 @@
     <!-- Submit Field -->
     <div class="form-group col-sm-12">
         {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
-        <a href="{{ route('adminPanel.categories.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
+        <a href="{{ route('adminPanel.information.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
     </div>
 
 </div>
